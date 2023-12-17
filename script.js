@@ -34,23 +34,12 @@ function countWords() {
     highlightedText += "&nbsp;";
   }
 
+  const firstWord = textArray[0];
+  if (firstWord === longestWord) {
+    highlightedText = "&nbsp;" + highlightedText;
+  }
+
   text.innerHTML = highlightedText;
 }
 
 button.addEventListener("click", countWords);
-
-// Reset text styling if the highlighted word was the first word before
-text.addEventListener("input", () => {
-  const textContent = (text.textContent || text.innerText).trim();
-  if (
-    (textContent.length === 0 ||
-      textContent === "&nbsp;" ||
-      textContent.length === 1) &&
-    button.getAttribute("clicked") === null
-  ) {
-    const spans = text.querySelectorAll("span");
-    spans.forEach((span) => {
-      span.classList.remove("highlight");
-    });
-  }
-});
