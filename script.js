@@ -3,11 +3,9 @@ const countText = document.getElementById("count");
 const button = document.getElementById("btn");
 
 function countWords() {
-  text.value = text.value
-    .replace(/<span class="highlight">/g, "")
-    .replace(/<\/span>/g, "");
+  const textContent = (text.textContent || text.innerText).trim();
+  const textArray = textContent.split(/\s+/);
 
-  const textArray = text.value.split(" ");
   let wordsCountArray = [],
     longestWordIndex = 0,
     count = 0,
@@ -26,10 +24,11 @@ function countWords() {
   longestWord = textArray[wordsCountArray.indexOf(longestWordIndex)];
 
   // Highlight the longest word
-  let highlightedText = text.value.replace(
-    longestWord,
+  let highlightedText = textContent.replace(
+    new RegExp(`\\b${longestWord}\\b`, "g"),
     `<span class="highlight">${longestWord}</span>`
   );
+
   text.innerHTML = highlightedText;
 }
 

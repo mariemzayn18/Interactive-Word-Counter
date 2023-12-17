@@ -2,10 +2,6 @@
   background-color: #ffff00;
 }
 
-textarea:focus {
-  outline: none;
-}
-
-textarea {
-  border-color: gainsboro;
+.highlight::after {
+  background-color: white;
 }
