@@ -29,6 +29,10 @@ function countWords() {
     `<span class="highlight">${longestWord}</span>`
   );
 
+  const lastWord = textArray[textArray.length - 1];
+  if (lastWord === longestWord) {
+    highlightedText += "&nbsp;";
+  }
   text.innerHTML = highlightedText;
 }
 
