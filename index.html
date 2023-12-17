@@ -7,28 +7,33 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@500&family=Preahvihear&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-
     <title>Interactive Word Counter</title>
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="row pt-5 px-5">
-            <div
-              contenteditable="true"
-              id="text"
-              name="text"
-              class="form-control h-20"
-            ></div>
+    <div class="container vh-100">
+      <div class="row">
+        <h1 class="col-12 text-center my-5">Interactive Word Counter</h1>
+      </div>
+      <div class="row card w-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <div class="pt-5 px-5">
+            <div contenteditable="true" id="text" class="form-control"></div>
           </div>
-          <div class="row px-5 pt-2"><p id="count" class="m-0 p-0"></p></div>
           <div class="text-center my-4">
             <button type="button" class="btn btn-primary" id="btn">
-              Count Words
+              Count
             </button>
+          </div>
+          <div class="row px-5 text-center">
+            <h6 id="count"></h6>
           </div>
         </div>
       </div>

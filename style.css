@@ -1,7 +1,17 @@
+body,
+.card-body {
+  background-color: rgb(199, 229, 255, 0.2);
+}
+
 .highlight {
   background-color: #ffff00;
 }
 
-.highlight::after {
-  background-color: white;
+#text {
+  min-height: 8em;
+}
+
+h1,
+h6 {
+  font-family: "Kanit", sans-serif;
 }
